@@ -1,6 +1,3 @@
-'use strict';
-
-const fs = require('fs');
 var numG = 0
 var chi = []
 var conChi = []
@@ -22,12 +19,9 @@ function getStoria() {
          "dove": document.getElementById("dove").value, "perche": document.getElementById("perche").value
       }
 
+      // la storia inserita nel db json
       db.push(storia)
-
-
-      let rawdata = fs.readFileSync('db.json');
-      let student = JSON.parse(rawdata);
-      console.log(student);
+      console.log(db)
 
       numG++
       chi.push(storia.chi)
@@ -48,6 +42,23 @@ function getStoriaFinita() {
    document.getElementById("finita").textContent = "Prossima storia"
    if (numG > 0) {
       var num = Math.floor(Math.random() * numG);
+      document.getElementById("chi").value = db[num]["chi"]
+
+      num = Math.floor(Math.random() * numG);
+      document.getElementById("conChi").value = db[num]["conChi"]
+
+      num = Math.floor(Math.random() * numG);
+      document.getElementById("cosaFanno").value = db[num]["cosaFanno"]
+
+      num = Math.floor(Math.random() * numG);
+      document.getElementById("dove").value = db[num]["dove"]
+
+      num = Math.floor(Math.random() * numG);
+      document.getElementById("perche").value = db[num]["perche"]
+
+      /*
+      var num = Math.floor(Math.random() * numG);
+
       document.getElementById("chi").value = chi[num]
       chi.splice(num, 1);
 
@@ -66,6 +77,7 @@ function getStoriaFinita() {
       num = Math.floor(Math.random() * numG);
       document.getElementById("perche").value = perche[num]
       perche.splice(num, 1);
+      */
       numG--
    }
    else {
