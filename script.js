@@ -91,17 +91,6 @@ function canc() {
 }
 
 async function readJson () {
-   fetch('https://github.com/filippo-renai/storie-web/blob/main/db.json')
-   .then(response => {
-       if (!response.ok) {
-           throw new Error("HTTP error " + response.status);
-       }
-       return response.json();
-   })
-   .then(json => {
-       console.log("Ce entro");
-   })
-   .catch(function () {
-       this.dataError = true;
-   })
+   fetch('./db.json')
+   .then(console.log)
 }
