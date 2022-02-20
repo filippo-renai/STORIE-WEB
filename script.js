@@ -6,10 +6,6 @@ var dove = []
 var perche = []
 db = []
 
-
-
-
-
 function getStoria() {
    if (document.getElementById("chi").value != "" && document.getElementById("conChi").value != "" && document.getElementById("cosaFanno").value != "" &&
       document.getElementById("dove").value != "" && document.getElementById("perche").value != "") {
@@ -19,7 +15,7 @@ function getStoria() {
          "dove": document.getElementById("dove").value, "perche": document.getElementById("perche").value
       }
 
-      // la storia inserita nel db json
+      await readJson()
       db.push(storia)
       console.log(db)
 
@@ -92,4 +88,20 @@ function canc() {
    document.getElementById("cosaFanno").value = ""
    document.getElementById("dove").value = ""
    document.getElementById("perche").value = ""
+}
+
+async function readJson () {
+   fetch('/Reading/api/file')
+   .then(response => {
+       if (!response.ok) {
+           throw new Error("HTTP error " + response.status);
+       }
+       return response.json();
+   })
+   .then(json => {
+       console.log("Ce entro");
+   })
+   .catch(function () {
+       this.dataError = true;
+   })
 }
