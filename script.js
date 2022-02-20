@@ -18,9 +18,13 @@ async function getStoria() {
       // Implementare logica del database
 
     
-      fetch('https://filippo-renai.github.io/storie-web/db.json')
-         .then(response => response.json())
-         .then(data => console.log(data));
+      try{
+         let prova = fetch('https://filippo-renai.github.io/storie-web/db.json').promise()
+      }
+      catch(Err){
+         console.log(Err)
+      }
+      console.log(prova)
       db.push(storia)
       //console.log(db)
 
