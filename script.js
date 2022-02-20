@@ -24,7 +24,7 @@ async function getStoria() {
       catch(Err){
          console.log(Err)
       }
-      console.log(prova)
+      console.log(prova.json())
       db.push(storia)
       //console.log(db)
 
