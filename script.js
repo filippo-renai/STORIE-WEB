@@ -6,7 +6,7 @@ var dove = []
 var perche = []
 db = []
 
-function getStoria() {
+async function getStoria() {
    if (document.getElementById("chi").value != "" && document.getElementById("conChi").value != "" && document.getElementById("cosaFanno").value != "" &&
       document.getElementById("dove").value != "" && document.getElementById("perche").value != "") {
 
@@ -15,8 +15,12 @@ function getStoria() {
          "dove": document.getElementById("dove").value, "perche": document.getElementById("perche").value
       }
 
-      fetch('./db.json')
-         .then(console.log)
+      // Implementare logica del database
+
+    
+      fetch('https://filippo-renai.github.io/storie-web/db.json')
+         .then(response => response.json())
+         .then(data => console.log(data));
       db.push(storia)
       //console.log(db)
 
