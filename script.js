@@ -15,7 +15,8 @@ function getStoria() {
          "dove": document.getElementById("dove").value, "perche": document.getElementById("perche").value
       }
 
-      await readJson()
+      fetch('./db.json')
+         .then(console.log)
       db.push(storia)
       //console.log(db)
 
@@ -90,7 +91,4 @@ function canc() {
    document.getElementById("perche").value = ""
 }
 
-async function readJson () {
-   fetch('./db.json')
-   .then(console.log)
-}
+
