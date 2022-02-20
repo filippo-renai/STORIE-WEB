@@ -17,7 +17,7 @@ function getStoria() {
 
       await readJson()
       db.push(storia)
-      console.log(db)
+      //console.log(db)
 
       numG++
       chi.push(storia.chi)
@@ -91,7 +91,7 @@ function canc() {
 }
 
 async function readJson () {
-   fetch('/Reading/api/file')
+   fetch('https://github.com/filippo-renai/storie-web/blob/main/db.json')
    .then(response => {
        if (!response.ok) {
            throw new Error("HTTP error " + response.status);
