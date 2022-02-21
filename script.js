@@ -49,7 +49,7 @@ async function getStoria() {
 
 }
 
-function getStoriaFinita() {
+async function getStoriaFinita() {
    console.log(numG)
    document.getElementById("salva").style.visibility = 'hidden'
    document.getElementById("cance").style.visibility = 'hidden'
