@@ -22,8 +22,8 @@ async function getStoria() {
       let response = await fetch('https://filippo-renai.github.io/storie-web/db.json')
       let json = await response.json();
       let jsonText =  JSON.parse(json)
-      json.push(storia)
-      console.log(json)
+      jsonText.push(storia)
+      console.log(jsonText)
       
  
       
