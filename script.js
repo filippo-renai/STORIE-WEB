@@ -23,7 +23,7 @@ async function getStoria() {
       let json = await response.json();
       let jsonText =  JSON.parse(json)
       jsonText.push(storia)
-      console.log(jsonText)
+      console.log("dio"  + jsonText)
       
  
       
