@@ -4,7 +4,7 @@ var conChi = []
 var cosaFanno = []
 var dove = []
 var perche = []
-db = []
+var db = []
 
 async function getStoria() {
    if (document.getElementById("chi").value != "" && document.getElementById("conChi").value != "" && document.getElementById("cosaFanno").value != "" &&
@@ -18,13 +18,13 @@ async function getStoria() {
       // Implementare logica del database
 
     
-      try{
-         let prova = fetch('https://filippo-renai.github.io/storie-web/db.json').promise()
-      }
-      catch(Err){
-         console.log(Err)
-      }
-      console.log(prova.json())
+     
+      let response = await fetch('https://filippo-renai.github.io/storie-web/db.json')
+      let json = await response.json();
+      console.log(json)
+      
+ 
+      
       db.push(storia)
       //console.log(db)
 
