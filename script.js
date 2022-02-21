@@ -6,11 +6,12 @@ var dove = []
 var perche = []
 var db = []
 
+
 async function getStoria() {
    if (document.getElementById("chi").value != "" && document.getElementById("conChi").value != "" && document.getElementById("cosaFanno").value != "" &&
       document.getElementById("dove").value != "" && document.getElementById("perche").value != "") {
 
-      let response = await fetch('https://filippo-renai.github.io/storie-web/db.json')
+      let response = await fetch('/db.json')
       let json = await response.json();
       json.push({
          "chi": document.getElementById("chi").value,
