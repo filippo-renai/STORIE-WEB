@@ -21,9 +21,8 @@ async function getStoria() {
      
       let response = await fetch('https://filippo-renai.github.io/storie-web/db.json')
       let json = await response.json();
-      let jsonText =  JSON.parse(json)
-      jsonText.push(storia)
-      console.log("dio"  + jsonText)
+      json.push(storia)
+      console.log(`prova: ${JSON.stringify(json)}`)
       
  
       
