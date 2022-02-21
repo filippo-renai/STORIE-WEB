@@ -9,32 +9,31 @@ var db = []
 async function getStoria() {
    if (document.getElementById("chi").value != "" && document.getElementById("conChi").value != "" && document.getElementById("cosaFanno").value != "" &&
       document.getElementById("dove").value != "" && document.getElementById("perche").value != "") {
-
-      var storia = {
-         "chi": document.getElementById("chi").value, "conChi": document.getElementById("conChi").value, "cosaFanno": document.getElementById("cosaFanno").value,
-         "dove": document.getElementById("dove").value, "perche": document.getElementById("perche").value
-      }
-
-      // Implementare logica del database
-
-    
      
       let response = await fetch('https://filippo-renai.github.io/storie-web/db.json')
       let json = await response.json();
-      json.push(storia)
-      console.log(`prova: ${JSON.stringify(json)}`)
+      json.push({
+         "chi": document.getElementById("chi").value, 
+         "conChi": document.getElementById("conChi").value, 
+         "cosaFanno": document.getElementById("cosaFanno").value,
+         "dove": document.getElementById("dove").value, 
+         "perche": document.getElementById("perche").value
+      })
+
+      console.log(`${JSON.stringify(json)}`)
       
  
       
-      db.push(storia)
+      //db.push(storia)
       //console.log(db)
-
+/*
       numG++
       chi.push(storia.chi)
       conChi.push(storia.conChi)
       cosaFanno.push(storia.cosaFanno)
       dove.push(storia.dove)
       perche.push(storia.perche)
+*/
       canc()
    }
 
