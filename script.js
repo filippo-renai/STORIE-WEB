@@ -22,20 +22,11 @@ async function getStoria() {
 
       console.log(`${JSON.stringify(json)}`)
 
-      const fs = require('fs');
-      const fileName = 'https://filippo-renai.github.io/storie-web/db.json';
-      const file = require(fileName);
-
-      fs.writeFile(fileName, JSON.stringify(json), function writeJSON(err) {
-         if (err) return console.log(err);
-         console.log(JSON.stringify(file));
-         console.log('writing to ' + fileName);
-      });
 
 
 
-      //db.push(storia)
-      //console.log(db)
+      db.push(storia)
+      console.log(db)
       /*
             numG++
             chi.push(storia.chi)
