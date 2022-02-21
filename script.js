@@ -45,21 +45,24 @@ function getStoriaFinita() {
    document.getElementById("cance").style.visibility = 'hidden'
    document.getElementById("regola").style.visibility = 'hidden'
    document.getElementById("finita").textContent = "Prossima storia"
-   if (numG > 0) {
+   let response = await fetch('https://filippo-renai.github.io/storie-web/db.json')
+   let json = await response.json();
+
+   
       var num = Math.floor(Math.random() * numG);
-      document.getElementById("chi").value = db[num]["chi"]
+      document.getElementById("chi").value = json[num]["chi"]
 
       num = Math.floor(Math.random() * numG);
-      document.getElementById("conChi").value = db[num]["conChi"]
+      document.getElementById("conChi").value = json[num]["conChi"]
 
       num = Math.floor(Math.random() * numG);
-      document.getElementById("cosaFanno").value = db[num]["cosaFanno"]
+      document.getElementById("cosaFanno").value = json[num]["cosaFanno"]
 
       num = Math.floor(Math.random() * numG);
-      document.getElementById("dove").value = db[num]["dove"]
+      document.getElementById("dove").value = json[num]["dove"]
 
       num = Math.floor(Math.random() * numG);
-      document.getElementById("perche").value = db[num]["perche"]
+      document.getElementById("perche").value = json[num]["perche"]
 
       /*
       var num = Math.floor(Math.random() * numG);
@@ -83,12 +86,7 @@ function getStoriaFinita() {
       document.getElementById("perche").value = perche[num]
       perche.splice(num, 1);
       */
-      numG--
-   }
-   else {
-      window.location.reload()
-      alert("GRAZIE PER AVER GIOCATO!")
-   }
+
 }
 
 function canc() {
